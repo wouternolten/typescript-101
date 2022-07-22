@@ -1,6 +1,6 @@
 /*
  * ----------------------------------------------------------------------------------------------------
- * Excercise 1/5: Defining types for a functions argument(s)
+ * Exercise 1/5: Defining types for a functions argument(s)
  * Correctly type the arguments of the function without using the any or unknown keywords.
  * Bonus points for those who can make the Object and Array types immutable with TypeScript.
  * ----------------------------------------------------------------------------------------------------
