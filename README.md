@@ -8,6 +8,7 @@
 
 ## Usage
 - Go through each exercise one by one, they are standalone.
+  - To test if the code (still) works as expected, you could use https://www.typescriptlang.org/play?ts=4.7.4, paste your code and hit run.
 - We plan 5 minutes for each exercise. After each exercise, we have a little recap and ask one of you to share your solution. 
 
 ## Exercises
