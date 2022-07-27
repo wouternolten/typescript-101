@@ -49,7 +49,7 @@ console.log(constructHouse([
 ]));
 
 function callPerson(firstName, lastName) {
-    return `Now calling: ${firstName}${lastName ? lastName : ''}. Please stand by.`;
+    return `Now calling: ${firstName}${lastName ? ` ${lastName}` : ''}. Please stand by.`;
 }
 
 console.log(callPerson('Steve-o'));
