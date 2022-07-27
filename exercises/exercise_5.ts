@@ -21,14 +21,14 @@ type OptionalOverrideUserDataType = {
     email?: string;
 };
 
-function optionallyOverrideUserData(userData: UserDataType, overrideData: OptionalOverrideUserDataType): UserDataType {
+function optionalOverrideUserData(userData: UserDataType, overrideData: OptionalOverrideUserDataType): UserDataType {
     return {
         ...userData,
         ...overrideData
     }
 }
 
-console.log(optionallyOverrideUserData(
+console.log(optionalOverrideUserData(
     {
         name: 'John',
         age: 50,
