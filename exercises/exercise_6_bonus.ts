@@ -4,7 +4,7 @@
  * ----------------------------------------------------------------------------------------------------  
 */
 
-const person2 = {
+const person = {
     name: 'John',
     age: 67,
     children: [
@@ -19,7 +19,7 @@ const person2 = {
     }
 }
 
-const animal2 = {
+const animal = {
     name: 'Felix',
     age: 10,
     children: [
@@ -60,19 +60,17 @@ function isPerson(animalOrPerson: AnimalType | PersonType) {
     return Boolean((animalOrPerson as PersonType).occupation);
 }
 
-function isAnimal2(animalOrPerson: AnimalType | PersonType) {
+function isAnimal(animalOrPerson: AnimalType | PersonType) {
     return Boolean((animalOrPerson as AnimalType).ability);
 }
 
-function petOrFire(animalOrPerson: AnimalType | PersonType): void {
+function petOrFire(animalOrPerson: AnimalType | PersonType) {
     if (isPerson(animalOrPerson)) {
-        console.log(`Person ${animalOrPerson.name} with occupation ${animalOrPerson.occupation} has been fired.`)
-    } else if (isAnimal2(animalOrPerson)) {
-        if (isAnimal2(animalOrPerson)) {
-            console.log(`Animal ${animalOrPerson.name} has been pet and will now ${animalOrPerson.ability}.`)
-        }
+        return `Person ${animalOrPerson.name} with occupation ${animalOrPerson.occupation} has been fired.`
+    } else if (isAnimal(animalOrPerson)) {
+        return `Animal ${animalOrPerson.name} has been pet and will now ${animalOrPerson.ability}.`;
     }
 }
 
-petOrFire(person2); // John should be fired.
-petOrFire(animal2); // We don't fire animals, we pet them!
+console.log(petOrFire(person)); // John should be fired.
+console.log(petOrFire(animal)); // We don't fire animals, we pet them!

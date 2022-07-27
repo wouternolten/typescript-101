@@ -1,9 +1,8 @@
 /*
  * ---------------------------------------------------------------------------------------------------- 
  * Exercise 3/5: Union Types & casting
- * Correctly type the argument type (Record<string, unknown>) of the function without using the any or unknown keywords.
- * You will see that you probably have to correct the logic in isAnimal to make TypeScript
- * understand what you are trying to do.
+ * Type the argument type (Record<string, unknown>) of the function without using the any or unknown keywords.
+ * You probably will have to correct the logic in isAnimal to make TypeScript understand what you are trying to do.
  * 
  * FYI: Use type casting very wisely, since you are overruling TypeScript.
  * ----------------------------------------------------------------------------------------------------
@@ -42,5 +41,5 @@ function isAnimal(animalOrPerson: Record<string, unknown>): boolean {
     return !animalOrPerson.occupation;
 }
 
-isAnimal(person); // Should return false
-isAnimal(animal); // Should return true
+console.log(isAnimal(person)); // Should be false
+console.log(isAnimal(animal)); // Should be true

@@ -13,7 +13,7 @@ type UserDataType = {
 };
 
 // 🤔
-type OptionallyOverrideUserDataType = {
+type OptionalOverrideUserDataType = {
     name?: string;
     age?: number;
     phone?: string;
@@ -21,14 +21,14 @@ type OptionallyOverrideUserDataType = {
     email?: string;
 };
 
-function optionallyOverrideUserData(userData: UserDataType, overrideData: OptionallyOverrideUserDataType): UserDataType {
+function optionallyOverrideUserData(userData: UserDataType, overrideData: OptionalOverrideUserDataType): UserDataType {
     return {
         ...userData,
         ...overrideData
     }
 }
 
-optionallyOverrideUserData(
+console.log(optionallyOverrideUserData(
     {
         name: 'John',
         age: 50,
@@ -39,7 +39,7 @@ optionallyOverrideUserData(
         email: 'johnsnewemail@email.com',
         city: 'Newark'
     }
-);
+));
 
 // 🤔
 type RequiredUserDataType = {
@@ -57,7 +57,7 @@ function overrideAllUserData(userData: UserDataType, overrideData: RequiredUserD
     }
 }
 
-overrideAllUserData(
+console.log(overrideAllUserData(
     {
         name: 'John',
         age: 50,
@@ -71,7 +71,7 @@ overrideAllUserData(
         age: 51,
         phone: '007'
     }
-);
+));
 
 // 🤔
 type UserEmailAndNameType = {
@@ -85,6 +85,11 @@ function getUserEmailAndName(userData: UserDataType): UserEmailAndNameType {
         name: userData.name
     }
 }
+
+console.log(getUserEmailAndName({
+    name: 'John Snow',
+    email: 'john@email.com'
+}));
 
 // 🤔
 type ReadOnlyUserDataType = {
@@ -109,6 +114,23 @@ function mapUsersByName(users: UserDataType[]): UsersByNameType {
     }, {});
 }
 
+console.log(mapUsersByName([
+    {
+        name: 'John Snow',
+        age: 50,
+        phone: '07354325235',
+        email: 'john@email.com',
+        city: 'Westeros'
+    },
+    {
+        email: 'mylittleemail@email.com',
+        city: 'Newark',
+        name: 'Johnny',
+        age: 51,
+        phone: '007'
+    }
+]));
+
 // 🤔
 type UsersByNameExcludingCityType = {
     [key: string]: {
@@ -129,3 +151,20 @@ function mapUsersByNameExcludingCity(users: UserDataType[]): UsersByNameExcludin
         };
     }, {});
 }
+
+console.log(mapUsersByNameExcludingCity([
+    {
+        name: 'John Snow',
+        age: 50,
+        phone: '07354325235',
+        email: 'john@email.com',
+        city: 'Westeros'
+    },
+    {
+        email: 'mylittleemail@email.com',
+        city: 'Newark',
+        name: 'Johnny',
+        age: 51,
+        phone: '007'
+    }
+]));

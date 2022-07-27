@@ -10,23 +10,23 @@ const environment = {
     testing: 'testing'
 };
 
-function logEnvironment(env: unknown) {
+function getReadableEnvironment(env) {
     if (env === environment.acceptance) {
-        console.log('Acceptance');
+        return 'Acceptance';
     } else if (env === environment.production) {
-        console.log('Production');
+        return 'Production';
     } else if (env === environment.testing) {
-        console.log('Testing');
+        return 'Testing';
     } else {
-        console.log('No matching environment found!');
+        return 'No matching environment found!';
     }
 }
 
 const exerciseData = ['acceptance', 'testing', 'production'];
 
-logEnvironment(exerciseData[0]);
-logEnvironment(exerciseData[1]);
-logEnvironment(exerciseData[2]);
+console.log(getReadableEnvironment(exerciseData[0]));
+console.log(getReadableEnvironment(exerciseData[1]));
+console.log(getReadableEnvironment(exerciseData[2]));
 
 /*
  * We have some resistor data (color and value).
