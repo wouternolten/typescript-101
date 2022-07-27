@@ -11,7 +11,7 @@ const person = {
         'Dirk',
         'Dries'
     ],
-    occupation: 'Work',
+    occupation: 'making food review videos',
     address: {
         houseNumber: 53,
         street: 'Redenstraat',
@@ -66,7 +66,7 @@ function isAnimal(animalOrPerson: AnimalType | PersonType) {
 
 function petOrFire(animalOrPerson: AnimalType | PersonType) {
     if (isPerson(animalOrPerson)) {
-        return `Person ${animalOrPerson.name} with occupation ${animalOrPerson.occupation} has been fired.`
+        return `Person ${animalOrPerson.name} with occupation "${animalOrPerson.occupation}" has been fired.`
     } else if (isAnimal(animalOrPerson)) {
         return `Animal ${animalOrPerson.name} has been pet and will now ${animalOrPerson.ability}.`;
     }
