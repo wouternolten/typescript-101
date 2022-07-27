@@ -13,7 +13,7 @@ function greet(name) {
 console.log(greet('John Hammond'));
 
 function multiplyAge(age, multiplier) {
-    return `If you were ${multiplier} times as old as you are now, your age would be: ${age * multiplier}`;
+    return `If you were ${multiplier} times as old as you are now (${age}), your age would be: ${age * multiplier}`;
 }
 
 console.log(multiplyAge(29, 5));
@@ -26,7 +26,7 @@ console.log(getNovel(['Once upon a time in the West', 'there was a little TypeSc
 
 function constructHouse(builders) {
     return builders
-        .map(builder => `Builder ${builder.name} has started building the house on day ${builder.startDay} in year ${builder.startYear}.`)
+        .map(builder => `Builder ${builder.name} has started building the house on day ${builder.startDay} of ${builder.month} in year ${builder.startYear}.`)
         .join(' ');
 }
 
@@ -34,16 +34,19 @@ console.log(constructHouse([
     {
         name: 'Fernando Sucre',
         startDay: 5,
+        month: 'July',
         startYear: 2005
     },
     {
         name: 'Michael Scofield',
         startDay: 8,
-        startYear: 2053
+        month: 'June',
+        startYear: 2015
     },
     {
         name: 'Bruce Springsteen',
         startDay: 2,
+        month: 'December',
         startYear: 1993
     }
 ]));
